@@ -1,103 +1,124 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sorteio de Natal Andra</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio de Natal - Andra</title>
+    <style>
+        /* Estilo de reset e layout geral */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: url('https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI5JnZlcj0xMDAwJmZpbGU9MzM4ODY1NTUtbmF0YWwtb3Utbm92by1hbm8tdmVybWVsaG8tZnVuZG8tY29tLWFiZXRvLWRlY29yYWNhby1haS1nZXJhZG8tZm90by5qcGcmY3JjPTQ2NTUwNjM5NyZzaXplPTAuMDIwNDA2JnVJZD0yNSZmU0lkPTEmdVNJZD0xJmQ9ZmFsc2UmdGtuPSZwdWJsaWNVcmw9dHJ1ZSZhdHRhY2g9ZmFsc2U=.jpg') no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI5JnZlcj0xMDAwJmZpbGU9MzM4ODY1NTUtbmF0YWwtb3Utbm92by1hbm8tdmVybWVsaG8tZnVuZG8tY29tLWFiZXRvLWRlY29yYWNhby1haS1nZXJhZG8tZm90by5qcGcmY3JjPTQ2NTUwNjM5NyZzaXplPTAuMDIwNDA2JnVJZD0yNSZmU0lkPTEmdVNJZD0xJmQ9ZmFsc2UmdGtuPSZwdWJsaWNVcmw9dHJ1ZSZhdHRhY2g9ZmFsc2U=.jpg');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
 
-    .container {
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      max-width: 800px;
-      width: 90%;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      backdrop-filter: blur(8px);
-    }
+        /* Contêiner principal do site */
+        .container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-    .logo img {
-      max-width: 180px;
-      height: auto;
-      margin-bottom: 15px;
-    }
+        /* Anúncios laterais */
+        .banner-vertical, .banner-quadrado {
+            position: fixed;
+            width: 120px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-    h1 {
-      color: #b82e1f;
-      font-size: 2.5em;
-      margin: 15px 0;
-      font-weight: 700;
-    }
+        /* Anúncios fixos nas laterais */
+        .banner-vertical.left {
+            left: 10px;
+            top: 20px;
+        }
 
-    .highlight img {
-      width: 100%;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
+        .banner-vertical.right {
+            right: 10px;
+            top: 20px;
+        }
 
-    .description {
-      font-size: 1.1em;
-      color: #555;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
+        .banner-quadrado.left {
+            left: 10px;
+            top: 300px;
+        }
 
-    .participar-button {
-      background-color: #b82e1f;
-      color: #fff;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      font-weight: bold;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
+        /* Ajustes de imagem */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
 
-    .participar-button:hover {
-      background-color: #d73c2c;
-    }
-  </style>
+        .highlight {
+            margin-top: 15px;
+            border: 2px solid #ff4d4d;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #c71e1e;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        button {
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #c71e1e;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">
-      <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xNzk3JnZlcj0xMDAwJmZpbGU9YW5kcmEtbG9nbyslMjgxJTI5KyUyODElMjkucG5nJmNyYz00MjIwODY0MTU4JnNpemU9MC4wMDYwNjcmdUlkPTI1JmZTSWQ9MSZ1U0lkPTEmZD1mYWxzZSZ0a249JnB1YmxpY1VybD10cnVlJmF0dGFjaD1mYWxzZQ==.png" alt="Logo da Andra">
+
+    <!-- Anúncios Laterais -->
+    <div class="banner-vertical left">
+        <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTMwJnZlcj0xMDAwJmZpbGU9YW51bmNpbythbWVyaWNhbmFzLnBuZyZjcmM9NDIwODA2OTExOSZzaXplPTAuMDQ5ODY0JnVJZD0yNSZmU0lkPTEmdVNJZD0xJmQ9ZmFsc2UmdGtuPSZwdWJsaWNVcmw9dHJ1ZSZhdHRhY2g9ZmFsc2U=.png" alt="Anúncio Vertical 1">
+    </div>
+    <div class="banner-quadrado left">
+        <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTMxJnZlcj0xMDAwJmZpbGU9YW51bmNpbytpbmYucG5nJmNyYz00MjUwMzMyOTgyJnNpemU9MC4wNjA3OCZ1SWQ9MjUmZlNJZD0xJnVTSWQ9MSZkPWZhbHNlJnRrbj0mcHVibGljVXJsPXRydWUmYXR0YWNoPWZhbHNl.png" alt="Anúncio Quadrado">
+    </div>
+    <div class="banner-vertical right">
+        <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTMyJnZlcj0xMDAwJmZpbGU9YW51bmNpbythcmcucG5nJmNyYz0xMTc4OTE2MDQzJnNpemU9MC4wNTMxMjYmdUlkPTI1JmZTSWQ9MSZ1U0lkPTEmZD1mYWxzZSZ0a249JnB1YmxpY1VybD10cnVlJmF0dGFjaD1mYWxzZQ==.png" alt="Anúncio Vertical 2">
     </div>
 
-    <h1>Sorteio de Natal Andra</h1>
-
-    <div class="highlight">
-      <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI4JnZlcj0xMDAwJmZpbGU9QmFubmVyLU5hdGFsLTIwMjEuanBnJmNyYz0yNTY3NzE5ODU2JnNpemU9MC4xMTAyNiZ1SWQ9MjUmZlNJZD0xJnVTSWQ9MSZkPWZhbHNlJnRrbj0mcHVibGljVXJsPXRydWUmYXR0YWNoPWZhbHNl.jpg" alt="Banner de Natal">
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xNzk3JnZlcj0xMDAwJmZpbGU9YW5kcmEtbG9nbyslMjgxJTI5KyUyODElMjkucG5nJmNyYz00MjIwODY0MTU4JnNpemU9MC4wMDYwNjcmdUlkPTI1JmZTSWQ9MSZ1U0lkPTEmZD1mYWxzZSZ0a249JnB1YmxpY1VybD10cnVlJmF0dGFjaD1mYWxzZQ==.png" alt="Logo da Empresa">
+        <h1>Sorteio de Natal - Participe e Ganhe!</h1>
+        <p>Inscreva-se para participar do nosso grande sorteio de Natal e concorra a prêmios incríveis!</p>
+        <button>Participe Agora</button>
+        <img class="highlight" src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI4JnZlcj0xMDAwJmZpbGU9QmFubmVyLU5hdGFsLTIwMjEuanBnJmNyYz0yNTY3NzE5ODU2JnNpemU9MC4xMTAyNiZ1SWQ9MjUmZlNJZD0xJnVTSWQ9MSZkPWZhbHNlJnRrbj0mcHVibGljVXJsPXRydWUmYXR0YWNoPWZhbHNl.jpg" alt="Imagem Destaque">
+        <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI3JnZlcj0xMDAwJmZpbGU9bmF0YWwuanBnJmNyYz0yODQwMzcxMjE3JnNpemU9MC4wMTQxOTMmdUlkPTI1JmZTSWQ9MSZ1U0lkPTEmZD1mYWxzZSZ0a249JnB1YmxpY1VybD10cnVlJmF0dGFjaD1mYWxzZQ==.jpg" alt="Imagem Promocional">
     </div>
-
-    <div class="description">
-      <p>Participe do nosso sorteio de Natal! Celebre conosco esta época especial e concorra a prêmios incríveis. Estamos esperando por você!</p>
-      <p>Clique no botão abaixo para participar. Boa sorte e Feliz Natal!</p>
-    </div>
-
-    <a href="#formulario" class="participar-button">Participe Agora</a>
-  </div>
 </body>
 </html>
