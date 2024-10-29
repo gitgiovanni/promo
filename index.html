@@ -7,38 +7,45 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      color: #333;
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: #f7f7f7;
-      color: #333;
+      background: url('https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI5JnZlcj0xMDAwJmZpbGU9MzM4ODY1NTUtbmF0YWwtb3Utbm92by1hbm8tdmVybWVsaG8tZnVuZG8tY29tLWFiZXRvLWRlY29yYWNhby1haS1nZXJhZG8tZm90by5qcGcmY3JjPTQ2NTUwNjM5NyZzaXplPTAuMDIwNDA2JnVJZD0yNSZmU0lkPTEmdVNJZD0xJmQ9ZmFsc2UmdGtuPSZwdWJsaWNVcmw9dHJ1ZSZhdHRhY2g9ZmFsc2U=.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
     }
 
-    .header {
-      margin-top: 20px;
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
       text-align: center;
+      max-width: 800px;
+      margin: 20px;
     }
 
-    .header img {
+    .logo img {
       max-width: 200px;
       height: auto;
+      margin: 20px 0;
     }
 
-    .mascote img {
+    .highlight img {
       max-width: 100%;
-      height: auto;
-      margin: 20px 0;
+      border-radius: 10px;
     }
 
     h1 {
       color: #c0392b;
       font-size: 2em;
+      margin-top: 0;
     }
 
     .description {
-      text-align: center;
-      max-width: 600px;
-      margin-bottom: 30px;
+      font-size: 1.2em;
+      margin: 20px 0;
     }
 
     .participar-button {
@@ -50,6 +57,7 @@
       border-radius: 5px;
       cursor: pointer;
       text-decoration: none;
+      margin-top: 20px;
     }
 
     .participar-button:hover {
@@ -58,20 +66,23 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xNzk3JnZlcj0xMDAwJmZpbGU9YW5kcmEtbG9nbyslMjgxJTI5KyUyODElMjkucG5nJmNyYz00MjIwODY0MTU4JnNpemU9MC4wMDYwNjcmdUlkPTI1JmZTSWQ9MSZ1U0lkPTEmZD1mYWxzZSZ0a249JnB1YmxpY1VybD10cnVlJmF0dGFjaD1mYWxzZQ==.png" alt="Logo da Andra">
+  <div class="container">
+    <div class="logo">
+      <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xNzk3JnZlcj0xMDAwJmZpbGU9YW5kcmEtbG9nbyslMjgxJTI5KyUyODElMjkucG5nJmNyYz00MjIwODY0MTU4JnNpemU9MC4wMDYwNjcmdUlkPTI1JmZTSWQ9MSZ1U0lkPTEmZD1mYWxzZSZ0a249JnB1YmxpY1VybD10cnVlJmF0dGFjaD1mYWxzZQ==.png" alt="Logo da Andra">
+    </div>
+
     <h1>Sorteio de Natal Andra</h1>
-  </div>
 
-  <div class="description">
-    <p>Participe do nosso grande sorteio de Natal! É uma oportunidade única de ganhar prêmios incríveis e celebrar esta época mágica conosco.</p>
-    <p>Para participar, basta clicar no botão abaixo e preencher o formulário. Boa sorte e Feliz Natal!</p>
-  </div>
+    <div class="highlight">
+      <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI4JnZlcj0xMDAwJmZpbGU9QmFubmVyLU5hdGFsLTIwMjEuanBnJmNyYz0yNTY3NzE5ODU2JnNpemU9MC4xMTAyNiZ1SWQ9MjUmZlNJZD0xJnVTSWQ9MSZkPWZhbHNlJnRrbj0mcHVibGljVXJsPXRydWUmYXR0YWNoPWZhbHNl.jpg" alt="Banner de Natal">
+    </div>
 
-  <a href="#formulario" class="participar-button">Participe Agora</a>
+    <div class="description">
+      <p>Participe do nosso grande sorteio de Natal! É uma oportunidade única de ganhar prêmios incríveis e celebrar esta época mágica conosco.</p>
+      <p>Para participar, basta clicar no botão abaixo e preencher o formulário. Boa sorte e Feliz Natal!</p>
+    </div>
 
-  <div class="mascote">
-    <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI3JnZlcj0xMDAwJmZpbGU9bmF0YWwuanBnJmNyYz0yODQwMzcxMjE3JnNpemU9MC4wMTQxOTMmdUlkPTI1JmZTSWQ9MSZ1U0lkPTEmZD1mYWxzZSZ0a249JnB1YmxpY1VybD10cnVlJmF0dGFjaD1mYWxzZQ==.jpg" alt="Mascote de Natal da Andra">
+    <a href="#formulario" class="participar-button">Participe Agora</a>
   </div>
 </body>
 </html>
