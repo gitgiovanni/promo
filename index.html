@@ -9,66 +9,74 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      overflow: hidden;
     }
 
     body {
       font-family: Arial, sans-serif;
       color: #333;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       background: url('https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI5JnZlcj0xMDAwJmZpbGU9MzM4ODY1NTUtbmF0YWwtb3Utbm92by1hbm8tdmVybWVsaG8tZnVuZG8tY29tLWFiZXRvLWRlY29yYWNhby1haS1nZXJhZG8tZm90by5qcGcmY3JjPTQ2NTUwNjM5NyZzaXplPTAuMDIwNDA2JnVJZD0yNSZmU0lkPTEmdVNJZD0xJmQ9ZmFsc2UmdGtuPSZwdWJsaWNVcmw9dHJ1ZSZhdHRhY2g9ZmFsc2U=.jpg') no-repeat center center fixed;
       background-size: cover;
-      height: 100vh;
+      min-height: 100vh;
     }
 
     .container {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 20px;
-      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 12px;
       text-align: center;
       max-width: 800px;
       width: 90%;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      backdrop-filter: blur(8px);
     }
 
     .logo img {
-      max-width: 200px;
+      max-width: 180px;
       height: auto;
-      margin: 20px 0;
-    }
-
-    .highlight img {
-      max-width: 100%;
-      border-radius: 10px;
+      margin-bottom: 15px;
     }
 
     h1 {
-      color: #c0392b;
-      font-size: 2em;
-      margin-top: 0;
+      color: #b82e1f;
+      font-size: 2.5em;
+      margin: 15px 0;
+      font-weight: 700;
     }
 
-    .description {
-      font-size: 1.2em;
+    .highlight img {
+      width: 100%;
+      border-radius: 8px;
       margin: 20px 0;
     }
 
+    .description {
+      font-size: 1.1em;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
     .participar-button {
-      background-color: #c0392b;
+      background-color: #b82e1f;
       color: #fff;
-      padding: 15px 25px;
+      padding: 15px 30px;
       font-size: 1.2em;
+      font-weight: bold;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
       text-decoration: none;
-      margin-top: 20px;
+      transition: background-color 0.3s ease;
     }
 
     .participar-button:hover {
-      background-color: #e74c3c;
+      background-color: #d73c2c;
     }
   </style>
 </head>
@@ -85,8 +93,8 @@
     </div>
 
     <div class="description">
-      <p>Participe do nosso grande sorteio de Natal! É uma oportunidade única de ganhar prêmios incríveis e celebrar esta época mágica conosco.</p>
-      <p>Para participar, basta clicar no botão abaixo e preencher o formulário. Boa sorte e Feliz Natal!</p>
+      <p>Participe do nosso sorteio de Natal! Celebre conosco esta época especial e concorra a prêmios incríveis. Estamos esperando por você!</p>
+      <p>Clique no botão abaixo para participar. Boa sorte e Feliz Natal!</p>
     </div>
 
     <a href="#formulario" class="participar-button">Participe Agora</a>
