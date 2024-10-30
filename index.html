@@ -14,13 +14,31 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-image: url('https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI5JnZlcj0xMDAwJmZpbGU9MzM4ODY1NTUtbmF0YWwtb3Utbm92by1hbm8tdmVybWVsaG8tZnVuZG8tY29tLWFiZXRvLWRlY29yYWNhby1haS1nZXJhZG8tZm90by5qcGcmY3JjPTQ2NTUwNjM5NyZzaXplPTAuMDIwNDA2JnVJZD0yNSZmU0lkPTEmdVNJZD0xJmQ9ZmFsc2UmdGtuPSZwdWJsaWNVcmw9dHJ1ZSZhdHRhY2g9ZmFsc2U=.jpg');
             background-size: cover;
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            color: #c71e1e;
         }
 
         /* Contêiner principal */
@@ -34,6 +52,7 @@
             border-radius: 10px;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
             transition: box-shadow 0.3s ease;
+            margin-top: 70px; /* Para evitar que o conteúdo fique atrás do cabeçalho */
         }
 
         .container:hover {
@@ -43,7 +62,7 @@
         img { max-width: 100%; height: auto; border-radius: 8px; }
 
         h1 {
-            font-size: 2.2em;
+            font-size: 2.5em;
             color: #c71e1e;
             margin-bottom: 15px;
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
@@ -51,8 +70,7 @@
 
         p {
             margin-top: 10px;
-            font-size: 1.15em;
-            color: #333;
+            font-size: 1.2em;
             line-height: 1.6;
         }
 
@@ -65,11 +83,12 @@
             cursor: pointer;
             border-radius: 6px;
             margin-top: 20px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         button:hover {
             background-color: #c71e1e;
+            transform: scale(1.05);
         }
 
         .highlight {
@@ -93,6 +112,11 @@
     </script>
 </head>
 <body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h2>Andra</h2>
+    </header>
 
     <!-- Conteúdo Principal -->
     <div class="container">
