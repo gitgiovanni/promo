@@ -106,6 +106,22 @@
             border-radius: 8px;
         }
 
+        /* Estilo do aviso */
+        .aviso {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #c71d23;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 999;
+        }
+
         /* Estilo do iframe */
         .formulario-container {
             display: none; /* Oculto inicialmente */
@@ -136,6 +152,19 @@
         function mostrarFormulario() {
             document.getElementById("formulario").style.display = "block";
         }
+
+        // Função para mostrar o aviso e depois escondê-lo
+        function mostrarAviso() {
+            const aviso = document.getElementById("aviso");
+            aviso.style.opacity = 1; // Tornar o aviso visível
+
+            setTimeout(() => {
+                aviso.style.opacity = 0; // Esconder o aviso após 3 segundos
+            }, 3000); // 3000 ms = 3 segundos
+        }
+
+        // Executar a função ao carregar a página
+        window.onload = mostrarAviso;
     </script>
 </head>
 <body>
@@ -146,12 +175,15 @@
         <h2>Andra</h2>
     </header>
 
+    <!-- Aviso -->
+    <div id="aviso" class="aviso">Role para baixo para ver mais</div>
+
     <!-- Conteúdo Principal -->
     <div class="container">
-        <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xNzk3JnZlcj0xMDAwJmZpbGU9YW5kcmEtbG9nbyslMjgxJTI5KyUyODElMjkucG5nJmNyYz00MjIwODY0MTU4JnNpemU9MC4wMDYwNjcmdUlkPTI1JmZTSWQ9MSZ1U0lkPTEmZD1mYWxzZSZ0a249JnB1YmxpY1VybD10cnVlJmF0dGFjaD1mYWxzZQ==.png" alt="Logo da Empresa">
-        <h1>Sorteio de Natal - Participe e Ganhe!</h1>
-        <p>Inscreva-se para participar do nosso sorteio de Natal! Ganhe prêmios incríveis e celebre o fim do ano com a gente!</p>
-        <button onclick="mostrarFormulario()">Participe Agora</button>
+        <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI5JnZlcj0xMDAwJmZpbGU9MzM4ODY1NTUtbmF0YWwtb3Utbm92by1hbm8tdmVybWVsaG8tZnVuZG8tY29tLWFiZXRvLWRlY29yYWNhby1haS1nZXJhZG8tZm90by5qcGcmY3JjPTQ2NTUwNjM5NyZzaXplPTAuMDIwNDA2JnVJZD0yNSZmU0lkPTEmdVNJZD0xJmQ9ZmFsc2UmdGtuPSZwdWJsaWNVcmw9dHJ1ZSZhdHRhY2g9ZmFsc2U=.jpg" alt="Sorteio de Natal">
+        <h1>Sorteio de Natal 2024</h1>
+        <p>Participe do nosso sorteio de Natal e tenha a chance de ganhar prêmios incríveis!</p>
+        <button onclick="mostrarFormulario()">Inscreva-se</button>
 
         <!-- Container do formulário, inicialmente oculto -->
         <div id="formulario" class="formulario-container">
