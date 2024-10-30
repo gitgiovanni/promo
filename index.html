@@ -91,7 +91,19 @@
             box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
         }
+
+        /* Estilo do iframe */
+        .formulario-container {
+            display: none; /* Oculto inicialmente */
+            margin-top: 20px;
+            text-align: center;
+        }
     </style>
+    <script>
+        function mostrarFormulario() {
+            document.getElementById("formulario").style.display = "block";
+        }
+    </script>
 </head>
 <body>
 
@@ -110,9 +122,13 @@
     <div class="container">
         <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xNzk3JnZlcj0xMDAwJmZpbGU9YW5kcmEtbG9nbyslMjgxJTI5KyUyODElMjkucG5nJmNyYz00MjIwODY0MTU4JnNpemU9MC4wMDYwNjcmdUlkPTI1JmZTSWQ9MSZ1U0lkPTEmZD1mYWxzZSZ0a249JnB1YmxpY1VybD10cnVlJmF0dGFjaD1mYWxzZQ==.png" alt="Logo da Empresa">
         <h1>Sorteio de Natal - Participe e Ganhe!</h1>
-        <p>Inscreva-se para participar do nosso grande sorteio de Natal e concorra a prêmios incríveis! Este é o momento de celebrar e fazer parte do espírito natalino com a Andra. Não perca essa chance!</p>
-        <button>Participe Agora</button>
-        <img class="highlight" src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI4JnZlcj0xMDAwJmZpbGU9QmFubmVyLU5hdGFsLTIwMjEuanBnJmNyYz0yNTY3NzE5ODU2JnNpemU9MC4xMTAyNiZ1SWQ9MjUmZlNJZD0xJnVTSWQ9MSZkPWZhbHNlJnRrbj0mcHVibGljVXJsPXRydWUmYXR0YWNoPWZhbHNl.jpg" alt="Prêmio do Sorteio">
+        <p>Inscreva-se para participar do nosso sorteio de Natal! Ganhe prêmios incríveis e celebre o fim do ano com a gente!</p>
+        <button onclick="mostrarFormulario()">Participe Agora</button>
+
+        <!-- Container do formulário, inicialmente oculto -->
+        <div id="formulario" class="formulario-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSddqlYgZpldqnkLj4niCBAXzkBFkpwvb192U47cwgsVHrU3dw/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0" class="highlight">Carregando…</iframe>
+        </div>
     </div>
 
 </body>
