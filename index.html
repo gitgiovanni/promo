@@ -108,7 +108,10 @@
 
         /* Estilo do aviso */
         .aviso {
-            margin-top: 20px; /* Adiciona uma margem para afastar do topo */
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: rgba(255, 255, 255, 0.9);
             color: #c71d23;
             padding: 10px 20px;
@@ -117,7 +120,6 @@
             opacity: 0;
             transition: opacity 0.5s ease;
             z-index: 999;
-            text-align: center; /* Centraliza o texto do aviso */
         }
 
         /* Estilo da barra de rolagem */
@@ -167,17 +169,14 @@
 
     <!-- Conteúdo Principal -->
     <div class="container">
-        <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI4JnZlcj0xMDAwJmZpbGU9QmFubmVyLU5hdGFsLUJvZGFnZUVtZW50cy1saW5rZWQtaW5zdHJ1Y2lvbmF0YS5wbmc=.jpg" alt="Imagem do Sorteio">
-        <h1>Sorteio de Natal!</h1>
+        <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI4JnZlcj0xMDAwJmZpbGU9QmFubmVyLU5hdGFsLTIwMjEuanBnJmNyYz0yNTY3NzE5ODU2JnNpemU9MC4xMTAyNiZ1SWQ9MjUmZlNJZD0xJnVTSWQ9MSZkPWZhbHNlJnRrbj0mcHVibGljVXJsPXRydWUmYXR0YWNoPWZhbHNl.jpg" alt="Sorteio de Natal">
+        <h1>Sorteio de Natal 2024</h1>
         <p>Participe do nosso sorteio de Natal e tenha a chance de ganhar prêmios incríveis!</p>
-        <button onclick="mostrarFormulario()">Participar</button>
+        <button onclick="mostrarFormulario()">Inscreva-se</button>
 
-        <div id="formulario" style="display:none;">
-            <h2>Formulário de Inscrição</h2>
-            <p>Preencha seus dados para participar:</p>
-            <!-- Adicione os campos do formulário aqui -->
+        <div class="formulario-container highlight" id="formulario" style="display: none;">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSddqlYgZpldqnkLj4niCBAXzkBFkpwvb192U47cwgsVHrU3dw/viewform?embedded=true" width="640" height="3329" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
     </div>
-
 </body>
 </html>
