@@ -208,7 +208,20 @@ button:hover {
         <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xNzk3JnZlcj0xMDAwJmZpbGU9YW5kcmEtbG9nbyslMjgxJTI5KyUyODElMjkucG5nJmNyYz00MjIwODY0MTU4JnNpemU9MC4wMDYwNjcmdUlkPTI1JmZTSWQ9MSZ1U0lkPTEmZD1mYWxzZSZ0a249JnB1YmxpY1VybD10cnVlJmF0dGFjaD1mYWxzZQ==.png" alt="Logo da Empresa">
         <h2>ANDRA</h2>
     </header>
+    <script>
+function mostrarFormulario() {
+    const formulario = document.getElementById("formulario");
+    const aviso = document.getElementById("aviso");
 
+    formulario.classList.add("show");
+    formulario.style.display = "block";
+    aviso.style.opacity = 1;
+
+    setTimeout(() => {
+        aviso.style.opacity = 0;
+    }, 3000);
+}
+</script>
     <!-- Aviso -->
     <div id="aviso" class="aviso">Role para baixo para ver mais</div>
 
