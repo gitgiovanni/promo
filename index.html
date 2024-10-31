@@ -82,22 +82,31 @@
             line-height: 1.6;
         }
 
-        button {
-            background-color: #ff4d4d;
-            color: #fff;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1.1em;
-            cursor: pointer;
-            border-radius: 6px;
-            margin-top: 20px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
+        @keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
 
-        button:hover {
-            background-color: #c71e1e;
-            transform: scale(1.05);
-        }
+button {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    animation: pulse 1.5s infinite; /* Animação de pulse */
+}
+
+button:hover {
+    background-color: #c71e1e;
+}
 
         .highlight {
             margin-top: 20px;
