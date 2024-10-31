@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorteio de Natal - Andra</title>
     <link rel="icon" type="image/png" href="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xNzk3JnZlcj0xMDAwJmZpbGU9YW5kcmEtbG9nbyslMjgxJTI5KyUyODElMjkucG5nJmNyYz00MjIwODY0MTU4JnNpemU9MC4wMDYwNjcmdUlkPTI1JmZTSWQ9MSZ1U0lkPTEmZD1mYWxzZSZ0a249JnB1YmxpY1VybD10cnVlJmF0dGFjaD1mYWxzZQ==.png">
-    <style>
+  <style>
     /* Reset e estilo básico */
     * {
         margin: 0;
@@ -23,18 +23,6 @@
         min-height: 100vh;
         color: #333;
         overflow-y: scroll;
-        background-attachment: fixed; /* Parallax */
-    }
-
-    /* Fade-in (1) */
-    .container, header, #aviso {
-        opacity: 0;
-        animation: fadeIn 1.5s ease forwards;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
     }
 
     /* Cabeçalho */
@@ -52,8 +40,14 @@
         justify-content: space-between;
     }
 
-    header img { height: 50px; }
-    header h2 { font-size: 1.5em; color: #fff; }
+    header img {
+        height: 50px;
+    }
+
+    header h2 {
+        font-size: 1.5em;
+        color: #fff;
+    }
 
     /* Contêiner principal */
     .container {
@@ -65,13 +59,12 @@
         text-align: center;
         border-radius: 10px;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-        transition: box-shadow 0.3s ease, transform 0.3s;
+        transition: box-shadow 0.3s ease;
         margin-top: 70px;
     }
 
     .container:hover {
-        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
-        transform: translateY(-5px); /* Sombras animadas (5) */
+        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.35);
     }
 
     img { max-width: 100%; height: auto; border-radius: 8px; }
@@ -83,12 +76,19 @@
         text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     }
 
-    p { margin-top: 10px; font-size: 1.2em; line-height: 1.6; }
+    p {
+        margin-top: 10px;
+        font-size: 1.2em;
+        line-height: 1.6;
+    }
 
-    /* Animação de pulse para o botão (3) */
     @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
     }
 
     button {
@@ -102,28 +102,10 @@
         margin-top: 20px;
         transition: background-color 0.3s;
         animation: pulse 1.5s infinite;
-        position: relative;
-        overflow: hidden;
     }
 
     button:hover {
         background-color: #c71e1e;
-    }
-
-    button::before { /* Efeito de brilho no botão (4) */
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -75%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.5);
-        transform: skewX(-25deg);
-        transition: left 0.5s;
-    }
-
-    button:hover::before {
-        left: 100%;
     }
 
     .highlight {
@@ -133,40 +115,35 @@
         border-radius: 8px;
     }
 
-    /* Animação de rolagem no aviso (2) */
-    @keyframes slideUp {
-        from { transform: translateY(50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-
+    /* Estilo do aviso (revertido) */
     .aviso {
         position: fixed;
         bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
-        background-color: rgba(255, 255, 0, 0.9);
+        background-color: yellow;
         color: #c71d23;
         padding: 10px 20px;
         border-radius: 8px;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-        opacity: 0;
-        animation: slideUp 0.5s ease-in-out forwards;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+        opacity: 1;
+        transition: opacity 0.5s ease;
         z-index: 999;
     }
 
-    /* Animação de entrada suave no formulário (6) */
     .formulario-container {
+        transition: opacity 0.5s ease-in-out;
         opacity: 0;
-        animation: dropIn 0.6s ease forwards;
     }
 
-    @keyframes dropIn {
-        from { transform: translateY(-50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+    .formulario-container.show {
+        opacity: 1;
     }
 
     /* Estilo da barra de rolagem */
-    ::-webkit-scrollbar { width: 12px; }
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
 
     ::-webkit-scrollbar-track {
         background: rgba(0, 0, 0, 0.1);
@@ -178,24 +155,11 @@
         border-radius: 10px;
     }
 
-    ::-webkit-scrollbar-thumb:hover { background: #b01a1e; }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #b01a1e;
+    }
 </style>
 
-    <script>
-     function mostrarFormulario() {
-    const formulario = document.getElementById("formulario");
-    const aviso = document.getElementById("aviso");
-
-    formulario.classList.add("show");
-    formulario.style.display = "block";
-    aviso.style.opacity = 1;
-
-    setTimeout(() => {
-        aviso.style.opacity = 0;
-    }, 3000);
-}
-
-    </script>
 </head>
 <body>
 
