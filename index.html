@@ -5,181 +5,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorteio de Natal - Andra</title>
     <link rel="icon" type="image/png" href="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xNzk3JnZlcj0xMDAwJmZpbGU9YW5kcmEtbG9nbyslMjgxJTI5KyUyODElMjkucG5nJmNyYz00MjIwODY0MTU4JnNpemU9MC4wMDYwNjcmdUlkPTI1JmZTSWQ9MSZ1U0lkPTEmZD1mYWxzZSZ0a249JnB1YmxpY1VybD10cnVlJmF0dGFjaD1mYWxzZQ==.png">
-  <style>
-    /* Reset e estilo básico */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+   <style>
+        /* Reset e estilo básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI5JnZlcj0xMDAwJmZpbGU9MzM4ODY1NTUtbmF0YWwtb3Utbm92by1hbm8tdmVybWVsaG8tZnVuZG8tY29tLWFiZXRvLWRlY29yYWNhby1haS1nZXJhZG8tZm90by5qcGcmY3JjPTQ2NTUwNjM5NyZzaXplPTAuMDIwNDA2JnVJZD0yNSZmU0lkPTEmdVNJZD0xJmQ9ZmFsc2UmdGtuPSZwdWJsaWNVcmw9dHJ1ZSZhdHRhY2g9ZmFsc2U=.jpg');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
+            overflow-y: scroll; /* Habilita a rolagem */
+        }
+
+        /* Cabeçalho */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #c71d23; /* Cor do cabeçalho */
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Para alinhar logo e título */
+        }
+
+        header img {
+            height: 50px; /* Altura do logo */
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            color: #fff; /* Cor do texto do cabeçalho */
+        }
+
+        /* Contêiner principal */
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+            transition: box-shadow 0.3s ease;
+            margin-top: 70px; /* Para evitar que o conteúdo fique atrás do cabeçalho */
+        }
+
+        .container:hover {
+            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.35);
+        }
+
+        img { max-width: 100%; height: auto; border-radius: 8px; }
+
+        h1 {
+            font-size: 2.5em;
+            color: #c71d23; /* Cor do título */
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        @keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
     }
-
-    body {
-        font-family: 'Arial', sans-serif;
-        background-image: url('https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI5JnZlcj0xMDAwJmZpbGU9MzM4ODY1NTUtbmF0YWwtb3Utbm92by1hbm8tdmVybWVsaG8tZnVuZG8tY29tLWFiZXRvLWRlY29yYWNhby1haS1nZXJhZG8tZm90by5qcGcmY3JjPTQ2NTUwNjM5NyZzaXplPTAuMDIwNDA2JnVJZD0yNSZmU0lkPTEmdVNJZD0xJmQ9ZmFsc2UmdGtuPSZwdWJsaWNVcmw9dHJ1ZSZhdHRhY2g9ZmFsc2U=.jpg');
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        color: #333;
-        overflow-y: scroll;
-        background-attachment: fixed; /* Parallax */
+    50% {
+        transform: scale(1.1);
     }
+}
 
-    /* Fade-in (1) */
-    .container, header, #aviso {
-        opacity: 0;
-        animation: fadeIn 1.5s ease forwards;
-    }
+button {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    animation: pulse 1.5s infinite; /* Animação de pulse */
+}
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+button:hover {
+    background-color: #c71e1e;
+}
 
-    /* Cabeçalho */
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: #c71d23;
-        padding: 10px 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+        .highlight {
+            margin-top: 20px;
+            border: 2px solid #ff4d4d;
+            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
 
-    header img { height: 50px; }
-    header h2 { font-size: 1.5em; color: #fff; }
+        /* Estilo do aviso */
+     .aviso {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 0, 0.9); /* Cor de fundo amarela */
+    color: #c71d23;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Sombra mais intensa */
+    opacity: 0; /* Torna completamente visível */
+    transition: opacity 0.5s ease;
+    z-index: 999;
+}
+        .formulario-container {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+.formulario-container.show {
+    opacity: 1;
+}
 
-    /* Contêiner principal */
-    .container {
-        position: relative;
-        width: 90%;
-        max-width: 800px;
-        padding: 20px;
-        background-color: rgba(255, 255, 255, 0.95);
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-        transition: box-shadow 0.3s ease, transform 0.3s;
-        margin-top: 70px;
-    }
 
-    .container:hover {
-        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
-        transform: translateY(-5px); /* Sombras animadas (5) */
-    }
 
-    img { max-width: 100%; height: auto; border-radius: 8px; }
+        /* Estilo da barra de rolagem */
+        ::-webkit-scrollbar {
+            width: 12px; /* Largura da barra de rolagem */
+        }
 
-    h1 {
-        font-size: 2.5em;
-        color: #c71d23;
-        margin-bottom: 15px;
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-    }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1); /* Cor do fundo da barra de rolagem */
+            border-radius: 10px;
+        }
 
-    p { margin-top: 10px; font-size: 1.2em; line-height: 1.6; }
+        ::-webkit-scrollbar-thumb {
+            background: #c71d23; /* Cor da barra de rolagem */
+            border-radius: 10px;
+        }
 
-    /* Animação de pulse para o botão (3) */
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-    }
-
-    button {
-        background-color: #ff4d4d;
-        color: #fff;
-        border: none;
-        padding: 12px 25px;
-        font-size: 1.1em;
-        cursor: pointer;
-        border-radius: 6px;
-        margin-top: 20px;
-        transition: background-color 0.3s;
-        animation: pulse 1.5s infinite;
-        position: relative;
-        overflow: hidden;
-    }
-
-    button:hover {
-        background-color: #c71e1e;
-    }
-
-    button::before { /* Efeito de brilho no botão (4) */
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -75%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.5);
-        transform: skewX(-25deg);
-        transition: left 0.5s;
-    }
-
-    button:hover::before {
-        left: 100%;
-    }
-
-    .highlight {
-        margin-top: 20px;
-        border: 2px solid #ff4d4d;
-        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
-        border-radius: 8px;
-    }
-
-    /* Animação de rolagem no aviso (2) */
-    @keyframes slideUp {
-        from { transform: translateY(50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-
-    .aviso {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: rgba(255, 255, 0, 0.9);
-        color: #c71d23;
-        padding: 10px 20px;
-        border-radius: 8px;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-        opacity: 0;
-        animation: slideUp 0.5s ease-in-out forwards;
-        z-index: 999;
-    }
-
-    /* Animação de entrada suave no formulário (6) */
-    .formulario-container {
-        opacity: 0;
-        animation: dropIn 0.6s ease forwards;
-    }
-
-    @keyframes dropIn {
-        from { transform: translateY(-50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-
-    /* Estilo da barra de rolagem */
-    ::-webkit-scrollbar { width: 12px; }
-
-    ::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #c71d23;
-        border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover { background: #b01a1e; }
-</style>
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b01a1e; /* Cor ao passar o mouse */
+        }
+    </style>
 
 
 </head>
