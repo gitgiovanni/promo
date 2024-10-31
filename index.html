@@ -133,27 +133,20 @@
         border-radius: 8px;
     }
 
-    /* Animação de rolagem no aviso (2) */
-    @keyframes slideUp {
-        from { transform: translateY(50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-
     .aviso {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: rgba(255, 255, 0, 0.9);
-        color: #c71d23;
-        padding: 10px 20px;
-        border-radius: 8px;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-        opacity: 0;
-        animation: slideUp 0.5s ease-in-out forwards;
-        z-index: 999;
-    }
-
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 0, 0.9); /* Cor de fundo amarela */
+    color: #c71d23;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Sombra mais intensa */
+    opacity: 0; /* Torna completamente visível */
+    transition: opacity 0.5s ease;
+    z-index: 999;
+}
     /* Animação de entrada suave no formulário (6) */
     .formulario-container {
         opacity: 0;
