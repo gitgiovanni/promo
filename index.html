@@ -209,18 +209,18 @@ button:hover {
         <h2>ANDRA</h2>
     </header>
     <script>
-function mostrarFormulario() {
-    const formulario = document.getElementById("formulario");
-    const aviso = document.getElementById("aviso");
+   function mostrarFormulario() {
+            const formulario = document.getElementById("formulario");
+            const aviso = document.getElementById("aviso");
 
-    formulario.classList.add("show");
-    formulario.style.display = "block";
-    aviso.style.opacity = 1;
+            formulario.style.display = "block"; // Exibe o formulário
+            aviso.style.opacity = 1; // Exibe o aviso
 
-    setTimeout(() => {
-        aviso.style.opacity = 0;
-    }, 3000);
-}
+            // Remove o aviso após 5 segundos
+            setTimeout(() => {
+                aviso.style.opacity = 0;
+            }, 5000);
+        }
 </script>
     <!-- Aviso -->
     <div id="aviso" class="aviso">Role para baixo para ver mais</div>
