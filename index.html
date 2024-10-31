@@ -121,6 +121,14 @@
     transition: opacity 0.5s ease;
     z-index: 999;
 }
+        .formulario-container {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+.formulario-container.show {
+    opacity: 1;
+}
+
 
 
         /* Estilo da barra de rolagem */
@@ -143,18 +151,19 @@
         }
     </style>
     <script>
-        function mostrarFormulario() {
-            const formulario = document.getElementById("formulario");
-            const aviso = document.getElementById("aviso");
+     function mostrarFormulario() {
+    const formulario = document.getElementById("formulario");
+    const aviso = document.getElementById("aviso");
 
-            formulario.style.display = "block"; // Mostrar o formulário
-            aviso.style.opacity = 1; // Tornar o aviso visível
+    formulario.classList.add("show");
+    formulario.style.display = "block";
+    aviso.style.opacity = 1;
 
-            // Esconder o aviso após 3 segundos
-            setTimeout(() => {
-                aviso.style.opacity = 0; // Esconder o aviso
-            }, 3000); // 3000 ms = 3 segundos
-        }
+    setTimeout(() => {
+        aviso.style.opacity = 0;
+    }, 3000);
+}
+
     </script>
 </head>
 <body>
@@ -173,7 +182,8 @@
         <img src="https://fluig.andra.com.br/volume/stream/Rmx1aWc=/P3Q9MSZ2b2w9RGVmYXVsdCZpZD0xOTI4JnZlcj0xMDAwJmZpbGU9QmFubmVyLU5hdGFsLTIwMjEuanBnJmNyYz0yNTY3NzE5ODU2JnNpemU9MC4xMTAyNiZ1SWQ9MjUmZlNJZD0xJnVTSWQ9MSZkPWZhbHNlJnRrbj0mcHVibGljVXJsPXRydWUmYXR0YWNoPWZhbHNl.jpg" alt="Sorteio de Natal">
         <h1>Sorteio de Natal 2024</h1>
         <p>Participe do nosso sorteio de Natal e tenha a chance de ganhar três camisetas exclusivas!</p>
-        <button onclick="mostrarFormulario()">PARTICIPE!</button>
+       <button onclick="mostrarFormulario()" aria-label="Clique para participar do sorteio de Natal">PARTICIPE!</button>
+
 
         <div class="formulario-container highlight" id="formulario" style="display: none;">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSddqlYgZpldqnkLj4niCBAXzkBFkpwvb192U47cwgsVHrU3dw/viewform?embedded=true" width="640" height="3329" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
